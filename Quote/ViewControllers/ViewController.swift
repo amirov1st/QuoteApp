@@ -9,7 +9,7 @@ import UIKit
 
 final class ViewController: UIViewController {
     
-//    var quote =
+    var quote = Quote()
     
     @IBOutlet var quoteImage: UIImageView!
     @IBOutlet var bodyLabel: UILabel!
@@ -19,13 +19,20 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
         quoteImage.image = UIImage(named: "quotes")
 //        fetchQuote()
+        authorLabel.text = quote.author
+        bodyLabel.text = quote.body
     }
     
-//    private func fetchQuote() {
-//        NetworkManager.shared.fetchQuotes(url: List.url.rawValue) { [weak self] quote in
-//            self.quote = quote
-//        }
-//    }
+    private func fetchQuote() {
+        NetworkManager.shared.fetchQuotes(url: List.url.rawValue) { [weak self] quote in
+            switch quote {
+            case .success(let success):
+                <#code#>
+            case .failure(let failure):
+                <#code#>
+            }
+        }
+    }
 
 }
 
