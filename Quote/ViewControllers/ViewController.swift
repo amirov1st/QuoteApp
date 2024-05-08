@@ -26,10 +26,10 @@ final class ViewController: UIViewController {
     private func fetchQuote() {
         NetworkManager.shared.fetchQuotes(url: List.url.rawValue) { [weak self] quote in
             switch quote {
-            case .success(let success):
-                <#code#>
-            case .failure(let failure):
-                <#code#>
+            case .success(let quote):
+                self?.quote = Quote
+            case .failure(let error):
+                printContent(error)
             }
         }
     }
