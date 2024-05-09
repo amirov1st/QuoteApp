@@ -21,7 +21,9 @@ final class NetworkManager {
     static let shared = NetworkManager()
     
     func fetchQuotes(url: String, completion: @escaping(Result<Quote, NetworkError>) -> Void) {
-        guard let url = URL(string: url) else { return }
+        guard let url = URL(string: url) else { completion(.failure(.invalidURL))
+            return
+        }
         
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data else {
@@ -33,11 +35,10 @@ final class NetworkManager {
                 let quoteApp = try JSONDecoder().decode(QuoteApp.self, from: data)
                 completion(.success(quoteApp.quote))
             } catch {
-                print(error)
+                completion(.failure(.decodingError))
             }
         }.resume()
     }
     
     private init() {}
 }
-

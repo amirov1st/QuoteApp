@@ -9,8 +9,6 @@ import UIKit
 
 final class ViewController: UIViewController {
     
-    var quote = Quote()
-    
     @IBOutlet var quoteImage: UIImageView!
     @IBOutlet var bodyLabel: UILabel!
     @IBOutlet var authorLabel: UILabel!
@@ -18,21 +16,24 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         quoteImage.image = UIImage(named: "quotes")
-//        fetchQuote()
-        authorLabel.text = quote.author
-        bodyLabel.text = quote.body
+        fetchQuote()
+    }
+    
+    @IBAction func anotherAction(_ sender: Any) {
+        fetchQuote()
     }
     
     private func fetchQuote() {
         NetworkManager.shared.fetchQuotes(url: List.url.rawValue) { [weak self] quote in
-            switch quote {
-            case .success(let quote):
-                self?.quote = Quote
-            case .failure(let error):
-                printContent(error)
+            DispatchQueue.main.async {
+                switch quote {
+                case .success(let fetchQuote):
+                    self?.bodyLabel.text = "“\(fetchQuote.body)”"
+                    self?.authorLabel.text = "- \(fetchQuote.author)"
+                case .failure(let error):
+                    print(error)
+                }
             }
         }
     }
-
 }
-
