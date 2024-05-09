@@ -17,25 +17,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="rNa-ZO-zCw">
-                                <rect key="frame" x="60" y="377.66666666666669" width="273" height="96.666666666666686"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqD-WP-cek">
-                                        <rect key="frame" x="116.99999999999999" y="0.0" width="39.333333333333329" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueG-rh-hzB">
-                                        <rect key="frame" x="110.99999999999999" y="76.333333333333314" width="51.333333333333329" height="20.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqD-WP-cek">
+                                <rect key="frame" x="16" y="254" width="361" height="31"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueG-rh-hzB">
+                                <rect key="frame" x="16" y="574.66666666666663" width="361" height="33.333333333333371"/>
+                                <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="H2B-4I-P64">
-                                <rect key="frame" x="16" y="241" width="361" height="80"/>
+                                <rect key="frame" x="16" y="139" width="361" height="80"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="La7-ky-HWx">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -45,24 +40,36 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fav Qs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3Y-44-kaJ">
-                                        <rect key="frame" x="88" y="21.333333333333311" width="273" height="37.666666666666657"/>
+                                        <rect key="frame" x="88" y="21.333333333333339" width="273" height="37.666666666666657"/>
                                         <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="30"/>
                                         <color key="textColor" systemColor="systemBlueColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SoD-e9-gSI">
+                                <rect key="frame" x="154" y="688" width="85" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Another"/>
+                                <connections>
+                                    <action selector="anotherAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bcz-PF-pqg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="rNa-ZO-zCw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0wA-Kq-k87"/>
-                            <constraint firstItem="rNa-ZO-zCw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="6NA-ua-tji"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="H2B-4I-P64" secondAttribute="trailing" constant="16" id="8ve-rM-JJP"/>
-                            <constraint firstItem="rNa-ZO-zCw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GYi-pz-Ifd"/>
-                            <constraint firstItem="rNa-ZO-zCw" firstAttribute="top" secondItem="H2B-4I-P64" secondAttribute="bottom" constant="56.666666666666686" id="K6E-uk-pUW"/>
-                            <constraint firstItem="H2B-4I-P64" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="MEQ-Do-3jC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rNa-ZO-zCw" secondAttribute="trailing" constant="60" id="r9B-KH-6ON"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SoD-e9-gSI" secondAttribute="bottom" constant="95.666666666666629" id="9Ww-93-Tzq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cqD-WP-cek" secondAttribute="trailing" constant="16" id="A8S-Hu-rkQ"/>
+                            <constraint firstItem="cqD-WP-cek" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Aee-5g-vms"/>
+                            <constraint firstItem="ueG-rh-hzB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Dz6-NI-atU"/>
+                            <constraint firstItem="cqD-WP-cek" firstAttribute="top" secondItem="H2B-4I-P64" secondAttribute="bottom" constant="35" id="E2Q-Ev-V6s"/>
+                            <constraint firstItem="H2B-4I-P64" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="EsV-Cv-NB4"/>
+                            <constraint firstItem="SoD-e9-gSI" firstAttribute="top" secondItem="ueG-rh-hzB" secondAttribute="bottom" constant="80" id="JVm-CM-l82"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ueG-rh-hzB" secondAttribute="trailing" constant="16" id="LKq-PH-HOX"/>
+                            <constraint firstItem="H2B-4I-P64" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="aZt-Hk-fH2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="H2B-4I-P64" secondAttribute="trailing" constant="16" id="p4K-sk-fKL"/>
+                            <constraint firstItem="SoD-e9-gSI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vun-Cz-W1M"/>
                         </constraints>
                     </view>
                     <connections>
